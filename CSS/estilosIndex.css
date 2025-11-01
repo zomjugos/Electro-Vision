@@ -2,6 +2,11 @@
     background-color: whitesmoke;
     width: fit-content;
     border-radius: 1rem;
+    border: 0.1875rem solid transparent;
+    transition: border 0.15s linear;
+}
+.cajaProducto:hover{
+    border: 0.1875rem solid gainsboro;
 }
 .imgDeProducto{
     width: 15rem;
@@ -15,6 +20,7 @@
 .principal{
     padding: 1rem;
     margin: 1rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 .Opciones{
     background-color: white;
