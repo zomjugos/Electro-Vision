@@ -16,6 +16,15 @@
     padding: 1rem;
     margin: 1rem;
 }
+.Opciones{
+    background-color: white;
+    width: 10%;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 0.3rem;
+}
 header{
     height: 5rem;
     background-image: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
@@ -24,4 +33,5 @@ header{
 body{
     margin: 0px;
     padding: 0px;
+
 }
