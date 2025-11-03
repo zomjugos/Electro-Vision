@@ -10,39 +10,25 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  php-tests:
+            if: github.event.pull_request.draft == false
+            runs-on: ubuntu-latest
+            timeout-minutes: 10
+        
+            steps:
+            - uses: actions/checkout@v4
+        
+            - name: Run PHP Tests in src directory
+              uses: alleyinteractive/action-test-php@develop
+              with:
+                php-version: '8.1'
+                working-directory: './src'
+                cache-dependency-path: './src/composer.lock'
+                audit-skip: 'true'
+                test-command: 'composer run-script test:unit'
+                build-command: 'composer run-script build:prod'
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
-
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
-
-    on:
-      pull_request:
-        branches:
-        - main      
-            - name: composer-php
-  # You may pin to the exact commit or the version.
-  # uses: nick-zh/composer@7d8fabe9f01d0d721a55e712b5fa83d35d584df1
-  uses: nick-zh/composer@php7.4
-  with:
-    # Action to run, e.g. install, add any additional options you need also here
-    action: # optional, default is install
+          
           
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
