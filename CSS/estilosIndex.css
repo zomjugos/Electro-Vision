@@ -19,13 +19,12 @@
     padding: 1rem;
     margin: 1rem;
     font-family: 'Times New Roman', Times, serif;
+
 } .Opciones {
     background-color: white;
     width: 10%;
     height: 90%;
     text-align: center;
-    flex-direction: row;
-    flex-direction: row;
     margin-right: 0.3rem;
 } header {
     height: 5rem;
@@ -35,4 +34,16 @@
 } body {
     margin: 0px;
     padding: 0px;
+} .anuncio {
+    background-color: gray;
+    height: 69rem;
+    width: 25rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.anuncio img{
+    width: 20rem;
+    height: max-content;
 }

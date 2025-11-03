@@ -12,15 +12,68 @@
         <nav class="Opciones"><a href="cuenta.php" class="textoDeProducto"><p>Cuenta</p></a></nav>
         <nav class="Opciones"><a href="index.html#precios" class="textoDeProducto"><p>Mejores precios</p></a></nav>
     </header>
-    <div id="principal">
-        <h1>Bienvenido a la mejor tienda del mundo</h1>
+    <div id="principal" style="display: flex; gap: 5rem;">
+        <nav class="anuncio">
+            <img src="IMG/THEPOSTER.jfif" alt="Anuncio" name="anuncio" usemap="#redirijir">
+            <map name="redirijir">
+                <area shape="rect" coords="0,0,960,1280" href="https://zomjugos.github.io">
+            </map>
+        </nav>
+        <nav style="display: flex; flex-direction: column;">
+            <br>
+            <canvas id="letrero" width="fit-content" height="35"></canvas>
+            <script>
+              const canvas = document.getElementById('letrero');
+              const ctx = canvas.getContext('2d');
+      
+              let text = "La vida se ve mejor con electrovision"; // El texto a mostrar
+              let posX = canvas.width; // Posición inicial del texto (fuera del canvas a la derecha)
+              const speed = 2; // Velocidad de movimiento
+              const fontSize = 40; // Tamaño de la fuente
+      
+              function drawText() {
+                // Limpiar el canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+                // Establecer el estilo del texto
+                ctx.font = fontSize + "px Arial";
+                ctx.fillStyle = "#621176";
+                ctx.textAlign = "left";
+                ctx.textBaseline = "middle"; // Alineación vertical centrada
+      
+                // Dibujar el texto
+                ctx.fillText(text, posX, canvas.height / 2);
+      
+                // Actualizar la posición del texto
+                posX -= speed;
+      
+                // Reiniciar la posición del texto cuando sale por la izquierda
+                const textWidth = ctx.measureText(text).width;
+                if (posX < -textWidth) {
+                  posX = canvas.width;
+                }
+      
+                // Repetir el dibujo del texto
+                requestAnimationFrame(drawText);
+              }
+      
+              // Iniciar la animación
+              drawText();
+          </script>
+            <br>
+            <div class="cajaProducto">
+                <a href="productos/productoPrueba.html"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
+            </div>
 
-        <div class="cajaProducto">
-            <a href="productos/productoPrueba.html"><img src="IMG/Captura de pantalla 2025-09-21 115254.png" alt="imagen de ejemplo" class="imgDeProducto">
-            <p class="textoDeProducto">hola</p></a>
-        </div>
-
-        <h1 id="precios">¡Precios BOMBA!</h1>
+            <h1 id="precios">¡Precios BOMBA!</h1>
+            <br>
+            <div class="cajaProducto">
+                <a href="productos/productoPrueba.html"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
+            </div>
+        </nav>
+            
     </div>
 </body>
 </html>
