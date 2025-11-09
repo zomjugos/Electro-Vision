@@ -49,3 +49,21 @@
     width: 20rem;
     height: max-content;
 }
+
+.perfilProducto {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 34.92rem;
+    border-radius: 1rem;
+    border: 0.1875rem solid transparent;
+    transition: border 0.15s linear;
+}
+
+.perfilProducto form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfilProducto:hover {border: 0.1875rem solid gainsboro;}
