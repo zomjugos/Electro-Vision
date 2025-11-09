@@ -10,6 +10,7 @@
                 
                 if (!preg_match("/^[a-zA-Z-' ]*$/",$nombre)) {
                     $nameErr = "Solo se permiten letras y espacios.";
+
                 } else {
                     $nombre = test_input($_POST["name"]);
                 }
@@ -42,14 +43,14 @@
                 }
             }
 
-            if (empty($_POST["imagen"])) {
+            if (empty($_FILES["imagen"])) {
                 $imagErr = "Imagen de usuario requerida.";
             } else {
                 
-                if ($_POST("imagen") != 'image/jpeg' || $_POST("imagen") != 'image/png') {
+                if ($_FILES("imagen") != 'image/jpeg' || $_POST("imagen") != 'image/png') {
                     $imagErr = "Imagen de usuario requerida.";
                 }else{
-                    $imagen = test_input($_POST["imagen"]);
+                    $imagen = test_input($_FILES["imagen"]);
                 }
             }
 
@@ -65,6 +66,27 @@
                 $accept = test_input($_POST["aceptar"]);
             }
         }
+
+        if (empty($nameErr) && empty($emailErr) && empty($passErr) && empty($confiErr) &&
+        empty($imagErr) && empty($dateErr) && empty($acceptErr)) {
+
+        // Aquí podrías guardar los datos en una base de datos o redirigir
+        echo "<script>alert('Registro exitoso'); window.location.href='../index.html';</script>";
+        exit;
+    } else {
+        // Mostrar errores (para pruebas, normalmente se renderiza en HTML)
+        echo "<h3>Errores detectados:</h3>";
+        echo "<ul>";
+        echo "<li>$nameErr</li>";
+        echo "<li>$emailErr</li>";
+        echo "<li>$passErr</li>";
+        echo "<li>$confiErr</li>";
+        echo "<li>$imagErr</li>";
+        echo "<li>$dateErr</li>";
+        echo "<li>$acceptErr</li>";
+        echo "</ul>";
+        echo "<a href='../index.html'>Volver</a>";
+    }
 
         function test_input($data) {
             $data = trim($data);
