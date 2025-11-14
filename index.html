@@ -9,16 +9,11 @@
 <body>
     <header>
         <nav class="Opciones"><a href="index.html" class="textoDeProducto"><p>Pagina principal</p></a></nav>
-        <nav class="Opciones"><a href="cuenta.html" class="textoDeProducto"><p>Cuenta</p></a></nav>
+        <nav class="Opciones"><a href="cuenta.php" class="textoDeProducto"><p>Cuenta</p></a></nav>
         <nav class="Opciones"><a href="index.html#precios" class="textoDeProducto"><p>Mejores precios</p></a></nav>
     </header>
     <div id="principal" style="display: flex; gap: 5rem;">
-        <nav class="anuncio">
-            <img src="IMG/THEPOSTER.jfif" alt="Anuncio" name="anuncio" usemap="#redirijir">
-            <map name="redirijir">
-                <area shape="rect" coords="0,0,960,1280" href="https://zomjugos.github.io">
-            </map>
-        </nav>
+        
         <nav style="display: flex; flex-direction: column;">
             <br>
             <canvas id="letrero" width="fit-content" height="35"></canvas>
@@ -61,19 +56,56 @@
               drawText();
           </script>
             <br>
-            <div class="cajaProducto">
-                <a href="productos/productoPrueba.html"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
-                <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
-            </div>
-
-            <h1 id="precios">¡Precios BOMBA!</h1>
-            <br>
-            <div class="cajaProducto">
-                <a href="productos/productoPrueba.html"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
-                <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
-            </div>
-        </nav>
+            <nav style="display: flex; flex-direction: row; gap: 1rem; justify-content: space-evenly; flex-wrap: wrap;">
+                    <div class="cajaProducto">
+                        <a href="productos/productoPrueba.html">
+                            <img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                            <p class="textoDeProducto">Dell 16 Pro Laptop</p>
+                        </a>
+                    </div>
+                    <div class="cajaProducto">
+                        <a href="productos/productoPrueba2.html">
+                            <img src="IMG/D_NQ_NP_2X_868119-MLA98100357135_112025-F.webp" alt="imagen de ejemplo" class="imgDeProducto">
+                            <p class="textoDeProducto">Power Bank 50000mah Carga Rápida 4en1 Usb-c Y Lightning</p>
+                        </a>
+                    </div>
+                    <div class="cajaProducto">
+                        <a href="productos/productoPrueba2.html">
+                            <img src="IMG/D_NQ_NP_2X_868119-MLA98100357135_112025-F.webp" alt="imagen de ejemplo" class="imgDeProducto">
+                            <p class="textoDeProducto">Power Bank 50000mah Carga Rápida 4en1 Usb-c Y Lightning</p>
+                        </a>
+                    </div>
+                    <div class="cajaProducto">
+                        <a href="productos/productoPrueba2.html">
+                            <img src="IMG/D_NQ_NP_2X_868119-MLA98100357135_112025-F.webp" alt="imagen de ejemplo" class="imgDeProducto">
+                            <p class="textoDeProducto">Power Bank 50000mah Carga Rápida 4en1 Usb-c Y Lightning</p>
+                        </a>
+                    </div>
+                    <div class="cajaProducto">
+                        <a href="productos/productoPrueba2.html">
+                            <img src="IMG/D_NQ_NP_2X_868119-MLA98100357135_112025-F.webp" alt="imagen de ejemplo" class="imgDeProducto">
+                            <p class="textoDeProducto">Power Bank 50000mah Carga Rápida 4en1 Usb-c Y Lightning</p>
+                        </a>
+                    </div>
+            </nav>
             
+            <h1>¡Precios BOMBA!</h1>
+            <br>
+            <nav style="display: flex; flex-direction: row; gap: 1rem; justify-content: space-evenly; flex-wrap: wrap;">
+                <div class="cajaProducto">
+                    <a href="productos/productoPrueba.html" class="enlace"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                    <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
+                </div>
+                <div class="cajaProducto">
+                    <a href="productos/productoPrueba.html" class="enlace"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                    <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
+                </div>
+                <div class="cajaProducto">
+                    <a href="productos/productoPrueba.html" class="enlace"><img src="IMG/laptop-dell-plus-db16255nt-ice-bl-fpr-gallery-5.avif" alt="imagen de ejemplo" class="imgDeProducto">
+                    <p class="textoDeProducto">Dell 16 Pro Laptop</p></a>
+                </div>
+            </nav>
+        </nav>
     </div>
 </body>
 </html>
